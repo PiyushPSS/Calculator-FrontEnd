@@ -50,3 +50,7 @@ form .display input {
 form input#equal {
     width: 145px;
 }
+
+#inputText {
+    pointer-events: none;
+}
