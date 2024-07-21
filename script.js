@@ -9,7 +9,7 @@ var temp = "";
 
 function dataAdd(input) {
     var checkNum = Number(input);
-    if (checkNum >= 0 && checkNum <= 9) {
+    if (checkNum >= 0 && checkNum <= 9 || input == ".") {
         //the number inputted is a number.
         document.getElementById("inputText").value += input;
 
@@ -75,10 +75,23 @@ function calculate() {
 
 function allClear() {
     document.getElementById("inputText").value = "";
+    number1 = null;
+    number2 = null;
+    operator = null;
+    temp = "";
+    result = 0;
 }
 
 function del() {
-    document.getElementById("inputText").value = document.getElementById("inputText").value.slice(0, -1);
+
+    var input = document.getElementById("inputText").value;
+
+    if(input == "undefined" || input == "null" || input == "Infinity" || input == "NaN") {
+        document.getElementById("inputText").value = "";
+    } else {
+        document.getElementById("inputText").value = document.getElementById("inputText").value.slice(0, -1);
+    }
+
 }
 
 
