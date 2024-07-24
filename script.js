@@ -86,8 +86,13 @@ function del() {
 
     var input = document.getElementById("inputText").value;
 
-    if(input == "undefined" || input == "null" || input == "Infinity" || input == "NaN") {
+    if (input == "undefined" || input == "null" || input == "Infinity" || input == "NaN") {
         document.getElementById("inputText").value = "";
+        number1 = null;
+        number2 = null;
+        operator = null;
+        temp = "";
+        result = 0;
     } else {
         document.getElementById("inputText").value = document.getElementById("inputText").value.slice(0, -1);
     }
